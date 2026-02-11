@@ -7,7 +7,7 @@ export const Dialog = ({ isOpen, onClose, children }) => {
 
     useEffect(() => {
         if (isOpen) {
-            refDialog.current.showModal();            
+            refDialog.current.showModal();
         } else {
             refDialog.current.close();
         }
@@ -21,7 +21,8 @@ export const Dialog = ({ isOpen, onClose, children }) => {
         };
     }, [onClose]);
 
-    return (<>
+    return (
+    <>
         <dialog ref={refDialog} className='dialog'>
             <div className='actions'>
                 <button autoFocus onClick={onClose} className='btn-close'>
@@ -30,7 +31,8 @@ export const Dialog = ({ isOpen, onClose, children }) => {
             </div>
             {children}
         </dialog>
-    </>)
+    </>
+    )
 }
 
 export default Dialog;
